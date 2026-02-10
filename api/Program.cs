@@ -61,7 +61,8 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
             BaseSpeed = 0,
             Jitter = 0,
             FinalSpeed = null,
-            MaxEnd = null
+            MaxEnd = null,
+            FinishTimeMs = null
         })
         .Where(racer => !string.IsNullOrWhiteSpace(racer.Name))
         .ToList();
@@ -133,6 +134,12 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
                 {
                     racer.Position = Math.Min(racer.Position, racer.MaxEnd.Value);
                 }
+
+                // Track when racer finishes (reaches trackLength)
+                if (racer.FinishTimeMs is null && racer.Position >= trackLength)
+                {
+                    racer.FinishTimeMs = timeMs;
+                }
             }
         }
 
@@ -166,7 +173,7 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
             racer.Id,
             racer.Name,
             index + 1,
-            totalDurationMs
+            racer.FinishTimeMs ?? totalDurationMs
         ))
         .ToList();
 
@@ -221,4 +228,5 @@ class RacerState
     public double Jitter { get; set; }
     public double? FinalSpeed { get; set; }
     public double? MaxEnd { get; set; }
+    public int? FinishTimeMs { get; set; }
 }
