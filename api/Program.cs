@@ -108,7 +108,7 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
                 if (racer.Id == winnerId)
                 {
                     // Apply 100% boost to winner (double the speed)
-                    racer.FinalSpeed = Math.Max(remainingDistance / remainingTime, 0) * 2.0;
+                    racer.FinalSpeed = Math.Max((remainingDistance / remainingTime) * 2.0, 0);
                 }
                 else
                 {
