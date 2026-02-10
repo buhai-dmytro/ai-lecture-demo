@@ -111,6 +111,7 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
                 }
                 else
                 {
+                    // Increased boost by 50%: range changed from (0.6-1.8) to (0.9-2.7)
                     var maxEnd = Math.Max(trackLength - RandomRange(rng, 0.9, 2.7), racer.Position + 0.1);
                     racer.MaxEnd = maxEnd;
                     racer.FinalSpeed = Math.Max((maxEnd - racer.Position) / remainingTime, 0);
