@@ -94,6 +94,7 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
     var boostedRacerIndex = rng.Next(racers.Count);
     var boostedRacerId = racers[boostedRacerIndex].Id;
     racers[boostedRacerIndex].BoostedRacer = true;
+    var boostedRacer = racers[boostedRacerIndex];
 
     var winnerIndex = rng.Next(racers.Count);
     var winnerId = racers[winnerIndex].Id;
@@ -119,7 +120,6 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
         }
 
         // Check if boosted racer reached 50% and trigger boost
-        var boostedRacer = racers.First(r => r.Id == boostedRacerId);
         if (!boostTriggered && boostedRacer.Position >= trackLength * 0.5)
         {
             boostTriggered = true;
@@ -168,11 +168,11 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
                         racer.Position = Math.Min(racer.Position, racer.MaxEnd.Value);
                     }
                 }
-                else if (racer.BoostedRacer && boostTriggered && racer.Position < racer.BoostTargetPosition.GetValueOrDefault())
+                else if (racer.BoostedRacer && boostTriggered && racer.BoostTargetPosition.HasValue && racer.Position < racer.BoostTargetPosition.Value)
                 {
                     // Boosted racer accelerating rapidly
                     var boostSpeed = racer.BaseSpeed * 3.0; // 3x speed for rapid acceleration
-                    racer.Position = Math.Min(racer.BoostTargetPosition.GetValueOrDefault(), racer.Position + boostSpeed * dt);
+                    racer.Position = Math.Min(racer.BoostTargetPosition.Value, racer.Position + boostSpeed * dt);
                 }
                 else
                 {
