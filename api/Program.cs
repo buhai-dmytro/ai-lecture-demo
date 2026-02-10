@@ -133,6 +133,12 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
                 {
                     racer.Position = Math.Min(racer.Position, racer.MaxEnd.Value);
                 }
+
+                // Track finish time when racer crosses the finish line
+                if (racer.FinishTimeMs is null && racer.Position >= trackLength)
+                {
+                    racer.FinishTimeMs = timeMs;
+                }
             }
         }
 
@@ -147,6 +153,12 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
                 else if (racer.MaxEnd.HasValue)
                 {
                     racer.Position = Math.Min(racer.Position, racer.MaxEnd.Value);
+                }
+
+                // Ensure all racers have a finish time
+                if (racer.FinishTimeMs is null)
+                {
+                    racer.FinishTimeMs = totalDurationMs;
                 }
             }
         }
@@ -166,7 +178,7 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
             racer.Id,
             racer.Name,
             index + 1,
-            totalDurationMs
+            racer.FinishTimeMs ?? totalDurationMs
         ))
         .ToList();
 
@@ -221,4 +233,5 @@ class RacerState
     public double Jitter { get; set; }
     public double? FinalSpeed { get; set; }
     public double? MaxEnd { get; set; }
+    public int? FinishTimeMs { get; set; }
 }
