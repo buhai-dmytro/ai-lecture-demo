@@ -1,33 +1,67 @@
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\bin\Debug\net10.0\appsettings.Development.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\bin\Debug\net10.0\appsettings.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\bin\Debug\net10.0\RaceSimulator.Api.staticwebassets.endpoints.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\bin\Debug\net10.0\RaceSimulator.Api.exe
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\bin\Debug\net10.0\RaceSimulator.Api.deps.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\bin\Debug\net10.0\RaceSimulator.Api.runtimeconfig.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\bin\Debug\net10.0\RaceSimulator.Api.dll
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\bin\Debug\net10.0\RaceSimulator.Api.pdb
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\bin\Debug\net10.0\Microsoft.OpenApi.dll
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\RaceSimulator.Api.csproj.AssemblyReference.cache
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\rpswa.dswa.cache.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\RaceSimulator.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\RaceSimulator.Api.AssemblyInfoInputs.cache
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\RaceSimulator.Api.AssemblyInfo.cs
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\RaceSimulator.Api.csproj.CoreCompileInputs.cache
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\RaceSimulator.Api.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\RaceSimulator.Api.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\rjimswa.dswa.cache.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\scopedcss\bundle\RaceSimulator.Api.styles.css
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\staticwebassets.build.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\staticwebassets.build.json.cache
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\staticwebassets.development.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\staticwebassets.build.endpoints.json
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\swae.build.ex.cache
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\RaceSimu.9CED4A3E.Up2Date
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\RaceSimulator.Api.dll
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\refint\RaceSimulator.Api.dll
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\RaceSimulator.Api.pdb
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\RaceSimulator.Api.genruntimeconfig.cache
-C:\Users\Dmytro\Desktop\AI lecture\ai-lecture-demo\task1\api\obj\Debug\net10.0\ref\RaceSimulator.Api.dll
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/bin/Debug/net10.0/appsettings.Development.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/bin/Debug/net10.0/appsettings.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/bin/Debug/net10.0/RaceSimulator.Api.staticwebassets.endpoints.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/bin/Debug/net10.0/RaceSimulator.Api.exe
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/bin/Debug/net10.0/RaceSimulator.Api.deps.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/bin/Debug/net10.0/RaceSimulator.Api.runtimeconfig.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/bin/Debug/net10.0/RaceSimulator.Api.dll
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/bin/Debug/net10.0/RaceSimulator.Api.pdb
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/bin/Debug/net10.0/Microsoft.AspNetCore.OpenApi.dll
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/bin/Debug/net10.0/Microsoft.OpenApi.dll
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/RaceSimulator.Api.csproj.AssemblyReference.cache
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/rpswa.dswa.cache.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/RaceSimulator.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/RaceSimulator.Api.AssemblyInfoInputs.cache
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/RaceSimulator.Api.AssemblyInfo.cs
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/RaceSimulator.Api.csproj.CoreCompileInputs.cache
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/RaceSimulator.Api.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/RaceSimulator.Api.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/rjimswa.dswa.cache.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/scopedcss/bundle/RaceSimulator.Api.styles.css
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/staticwebassets.build.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/staticwebassets.build.json.cache
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/staticwebassets.development.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/swae.build.ex.cache
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/RaceSimu.9CED4A3E.Up2Date
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/RaceSimulator.Api.dll
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/refint/RaceSimulator.Api.dll
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/RaceSimulator.Api.pdb
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/RaceSimulator.Api.genruntimeconfig.cache
+C:/Users/Dmytro/Desktop/AI lecture/ai-lecture-demo/task1/api/obj/Debug/net10.0/ref/RaceSimulator.Api.dll
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/bin/Debug/net10.0/appsettings.Development.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/bin/Debug/net10.0/appsettings.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/bin/Debug/net10.0/RaceSimulator.Api.staticwebassets.endpoints.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/bin/Debug/net10.0/RaceSimulator.Api
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/bin/Debug/net10.0/RaceSimulator.Api.deps.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/bin/Debug/net10.0/RaceSimulator.Api.runtimeconfig.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/bin/Debug/net10.0/RaceSimulator.Api.dll
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/bin/Debug/net10.0/RaceSimulator.Api.pdb
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/bin/Debug/net10.0/Microsoft.AspNetCore.OpenApi.dll
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/bin/Debug/net10.0/Microsoft.OpenApi.dll
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimulator.Api.csproj.AssemblyReference.cache
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/rpswa.dswa.cache.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimulator.Api.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimulator.Api.AssemblyInfoInputs.cache
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimulator.Api.AssemblyInfo.cs
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimulator.Api.csproj.CoreCompileInputs.cache
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimulator.Api.MvcApplicationPartsAssemblyInfo.cs
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimulator.Api.MvcApplicationPartsAssemblyInfo.cache
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimulator.Api.sourcelink.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/scopedcss/bundle/RaceSimulator.Api.styles.css
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/staticwebassets.build.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/staticwebassets.build.json.cache
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/staticwebassets.development.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/swae.build.ex.cache
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimu.9CED4A3E.Up2Date
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimulator.Api.dll
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/refint/RaceSimulator.Api.dll
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimulator.Api.pdb
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/RaceSimulator.Api.genruntimeconfig.cache
+/home/runner/work/ai-lecture-demo/ai-lecture-demo/api/obj/Debug/net10.0/ref/RaceSimulator.Api.dll
