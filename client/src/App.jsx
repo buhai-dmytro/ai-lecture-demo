@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 const API_BASE = 'http://localhost:5117'
 const DEFAULT_DURATION = 30
@@ -24,7 +24,7 @@ function App() {
   const [isRunning, setIsRunning] = useState(false)
   const [error, setError] = useState('')
   const [liveResults, setLiveResults] = useState([])
-  const [finishedRacers, setFinishedRacers] = useState(new Set())
+  const finishedRacersRef = useRef(new Set())
 
   const tickMs = raceData?.tickMs ?? 100
   const totalDurationMs = (raceData?.durationSeconds ?? duration) * 1000
@@ -49,8 +49,8 @@ function App() {
     raceData.racers.forEach((racer) => {
       const position = positions[racer.id] ?? 0
       
-      if (position >= trackLength && !finishedRacers.has(racer.id)) {
-        setFinishedRacers((prev) => new Set([...prev, racer.id]))
+      if (position >= trackLength && !finishedRacersRef.current.has(racer.id)) {
+        finishedRacersRef.current.add(racer.id)
         setLiveResults((prev) => {
           const newResult = {
             id: racer.id,
@@ -62,7 +62,7 @@ function App() {
         })
       }
     })
-  }, [raceData, positions, currentTick, tickMs, finishedRacers, isRunning])
+  }, [raceData, positions, currentTick, tickMs, isRunning])
 
   useEffect(() => {
     if (!isRunning || !raceData) return undefined
@@ -73,6 +73,24 @@ function App() {
         if (prev >= maxTick) {
           clearInterval(interval)
           setIsRunning(false)
+          
+          // When race ends, add any racers who didn't finish to results
+          const totalDurationMs = raceData.durationSeconds * 1000
+          raceData.racers.forEach((racer) => {
+            if (!finishedRacersRef.current.has(racer.id)) {
+              finishedRacersRef.current.add(racer.id)
+              setLiveResults((prevResults) => {
+                const newResult = {
+                  id: racer.id,
+                  name: racer.name,
+                  finishTimeMs: totalDurationMs,
+                  place: prevResults.length + 1
+                }
+                return [...prevResults, newResult]
+              })
+            }
+          })
+          
           return prev
         }
         return prev + 1
@@ -121,7 +139,7 @@ function App() {
     setCurrentTick(0)
     setRaceData(null)
     setLiveResults([])
-    setFinishedRacers(new Set())
+    finishedRacersRef.current = new Set()
 
     try {
       const response = await fetch(`${API_BASE}/api/race/simulate`, {
