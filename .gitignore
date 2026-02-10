@@ -42,7 +42,6 @@ bld/
 !?*.[Cc]ache/
 
 # Others
-*.user
 *.aps
 *.pch
 *.vspscc
@@ -80,7 +79,6 @@ artifacts/
 *.meta
 *.obj
 *.iobj
-*.pch
 *.pdb
 *.ipdb
 *.pgc
@@ -95,12 +93,7 @@ artifacts/
 *_wpftmp.csproj
 *.log
 *.tlog
-*.vspscc
-*.vssscc
 .builds
-*.pidb
-*.svclog
-*.scc
 
 # Visual Studio profiler
 *.psess
