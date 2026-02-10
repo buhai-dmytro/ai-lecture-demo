@@ -80,26 +80,58 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
     const double trackLength = 100.0;
     var totalDurationMs = request.DurationSeconds * 1000;
     var totalTicks = totalDurationMs / tickMs;
-    var riggedStartMs = (int)Math.Round(totalDurationMs * 0.9);
-
+    
     var targetSpeed = trackLength / request.DurationSeconds;
     foreach (var racer in racers)
     {
-        racer.BaseSpeed = targetSpeed * RandomRange(rng, 0.75, 1.25);
-        racer.Jitter = targetSpeed * 0.35;
+        racer.BaseSpeed = targetSpeed * RandomRange(rng, 0.9, 1.1);
+        racer.Jitter = 0;
+        racer.CurrentAcceleration = racer.BaseSpeed * RandomRange(rng, 0.07, 0.15);
+        racer.LastAccelerationUpdateTime = 0;
+        racer.BoostedRacer = false;
     }
+
+    var boostedRacerIndex = rng.Next(racers.Count);
+    racers[boostedRacerIndex].BoostedRacer = true;
+    var boostedRacer = racers[boostedRacerIndex];
 
     var winnerIndex = rng.Next(racers.Count);
     var winnerId = racers[winnerIndex].Id;
 
     var ticks = new List<RaceTick>(totalTicks + 1);
+    var boostTriggered = false;
+    var riggedStartMs = 0;
 
     for (var tick = 0; tick <= totalTicks; tick++)
     {
         var timeMs = tick * tickMs;
         var dt = tickMs / 1000.0;
+        var timeSeconds = timeMs / 1000.0;
 
-        if (timeMs >= riggedStartMs && racers.All(r => r.FinalSpeed is null))
+        // Update acceleration every second for all racers
+        foreach (var racer in racers)
+        {
+            if (timeSeconds >= racer.LastAccelerationUpdateTime + 1.0)
+            {
+                racer.CurrentAcceleration = racer.BaseSpeed * RandomRange(rng, 0.07, 0.15);
+                racer.LastAccelerationUpdateTime = timeSeconds;
+            }
+        }
+
+        // Check if boosted racer reached 50% and trigger boost
+        if (!boostTriggered && boostedRacer.Position >= trackLength * 0.5)
+        {
+            boostTriggered = true;
+            riggedStartMs = timeMs;
+            
+            // Calculate boost: push forward by 25-40% of track length
+            var boostDistance = trackLength * RandomRange(rng, 0.25, 0.40);
+            boostedRacer.BoostStartPosition = boostedRacer.Position;
+            boostedRacer.BoostTargetPosition = Math.Min(trackLength, boostedRacer.Position + boostDistance);
+        }
+
+        // Apply rigged finish logic at 90% of time if boost was triggered
+        if (boostTriggered && timeMs >= totalDurationMs * 0.9 && racers.All(r => r.FinalSpeed is null))
         {
             var remainingTime = Math.Max((totalDurationMs - timeMs) / 1000.0, 0.001);
             foreach (var racer in racers)
@@ -122,16 +154,30 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
         {
             foreach (var racer in racers)
             {
-                var isRiggedPhase = timeMs >= riggedStartMs && racer.FinalSpeed.HasValue;
-                var speed = isRiggedPhase
-                    ? racer.FinalSpeed.GetValueOrDefault()
-                    : Math.Max(0.5, racer.BaseSpeed + RandomRange(rng, -racer.Jitter, racer.Jitter));
-
-                racer.Position = Math.Min(trackLength, racer.Position + speed * dt);
-
-                if (isRiggedPhase && racer.Id != winnerId && racer.MaxEnd.HasValue)
+                var isRiggedPhase = racer.FinalSpeed.HasValue;
+                
+                if (isRiggedPhase)
                 {
-                    racer.Position = Math.Min(racer.Position, racer.MaxEnd.Value);
+                    // In final rigged phase, use calculated final speed
+                    var speed = racer.FinalSpeed.GetValueOrDefault();
+                    racer.Position = Math.Min(trackLength, racer.Position + speed * dt);
+                    
+                    if (racer.Id != winnerId && racer.MaxEnd.HasValue)
+                    {
+                        racer.Position = Math.Min(racer.Position, racer.MaxEnd.Value);
+                    }
+                }
+                else if (racer.BoostedRacer && boostTriggered && racer.BoostTargetPosition.HasValue && racer.Position < racer.BoostTargetPosition.Value)
+                {
+                    // Boosted racer accelerating rapidly
+                    var boostSpeed = racer.BaseSpeed * 3.0; // 3x speed for rapid acceleration
+                    racer.Position = Math.Min(racer.BoostTargetPosition.Value, racer.Position + boostSpeed * dt);
+                }
+                else
+                {
+                    // Normal racing: base speed + current acceleration
+                    var speed = Math.Max(0.5, racer.BaseSpeed + racer.CurrentAcceleration);
+                    racer.Position = Math.Min(trackLength, racer.Position + speed * dt);
                 }
             }
         }
@@ -221,4 +267,9 @@ class RacerState
     public double Jitter { get; set; }
     public double? FinalSpeed { get; set; }
     public double? MaxEnd { get; set; }
+    public double CurrentAcceleration { get; set; }
+    public double LastAccelerationUpdateTime { get; set; }
+    public bool BoostedRacer { get; set; }
+    public double? BoostStartPosition { get; set; }
+    public double? BoostTargetPosition { get; set; }
 }
