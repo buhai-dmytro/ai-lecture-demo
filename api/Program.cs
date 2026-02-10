@@ -92,7 +92,6 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
     }
 
     var boostedRacerIndex = rng.Next(racers.Count);
-    var boostedRacerId = racers[boostedRacerIndex].Id;
     racers[boostedRacerIndex].BoostedRacer = true;
     var boostedRacer = racers[boostedRacerIndex];
 
