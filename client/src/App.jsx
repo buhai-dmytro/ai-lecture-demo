@@ -49,6 +49,7 @@ function App() {
     raceData.racers.forEach((racer) => {
       const position = positions[racer.id] ?? 0
       
+      // Check if racer has crossed the finish line (position >= trackLength)
       if (position >= trackLength && !finishedRacersRef.current.has(racer.id)) {
         finishedRacersRef.current.add(racer.id)
         setLiveResults((prev) => {
