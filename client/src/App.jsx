@@ -49,7 +49,6 @@ function App() {
     raceData.racers.forEach((racer) => {
       const position = positions[racer.id] ?? 0
       
-      // Check if racer has crossed the finish line (position >= trackLength)
       if (position >= trackLength && !finishedRacersRef.current.has(racer.id)) {
         finishedRacersRef.current.add(racer.id)
         setLiveResults((prev) => {
@@ -75,7 +74,6 @@ function App() {
           clearInterval(interval)
           setIsRunning(false)
           
-          // When race ends, add any racers who didn't finish to results
           const totalDurationMs = raceData.durationSeconds * 1000
           raceData.racers.forEach((racer) => {
             if (!finishedRacersRef.current.has(racer.id)) {
