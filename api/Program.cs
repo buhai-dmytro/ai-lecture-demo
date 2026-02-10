@@ -80,7 +80,7 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
     const double trackLength = 100.0;
     var totalDurationMs = request.DurationSeconds * 1000;
     var totalTicks = totalDurationMs / tickMs;
-    var riggedStartMs = (int)Math.Round(totalDurationMs * 0.9);
+    var riggedStartMs = (int)Math.Round(totalDurationMs * 0.75);
 
     var targetSpeed = trackLength / request.DurationSeconds;
     foreach (var racer in racers)
@@ -111,7 +111,7 @@ app.MapPost("/api/race/simulate", (RaceSimRequest request) =>
                 }
                 else
                 {
-                    var maxEnd = Math.Max(trackLength - RandomRange(rng, 0.6, 1.8), racer.Position + 0.1);
+                    var maxEnd = Math.Max(trackLength - RandomRange(rng, 0.9, 2.7), racer.Position + 0.1);
                     racer.MaxEnd = maxEnd;
                     racer.FinalSpeed = Math.Max((maxEnd - racer.Position) / remainingTime, 0);
                 }
